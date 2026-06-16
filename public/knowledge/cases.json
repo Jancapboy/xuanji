@@ -1,0 +1,102 @@
+[
+  {
+    "id": "case-001",
+    "category": "case",
+    "source": "命理案例库",
+    "title": "身强七杀格案例",
+    "content": "乾造：丙午 庚寅 壬申 戊申。日主壬水，生于寅月，七杀当令。年干丙火偏财，时干戊土七杀。日主坐申金长生，时支申金，印星有力。此造七杀有印化，为贵格。",
+    "tags": ["七杀格", "身强", "案例"],
+    "relatedConcepts": ["classic-015", "rule-014"],
+    "confidence": "probable"
+  },
+  {
+    "id": "case-002",
+    "category": "case",
+    "source": "命理案例库",
+    "title": "正官格案例",
+    "content": "坤造：甲子 丙寅 己卯 辛未。日主己土，生于寅月，正官当令。年干甲木正官，月干丙火正印。官印相生，格局清纯。",
+    "tags": ["正官格", "官印相生", "案例"],
+    "relatedConcepts": ["classic-006", "rule-005"],
+    "confidence": "probable"
+  },
+  {
+    "id": "case-003",
+    "category": "case",
+    "source": "命理案例库",
+    "title": "食神生财格案例",
+    "content": "乾造：乙卯 丁亥 己巳 庚午。日主己土，生于亥月，偏财当令。月干丁火偏印，时干庚金伤官。此造食神生财，富贵可期。",
+    "tags": ["食神", "财星", "案例"],
+    "relatedConcepts": ["classic-014", "rule-013"],
+    "confidence": "probable"
+  },
+  {
+    "id": "case-004",
+    "category": "case",
+    "source": "命理案例库",
+    "title": "伤官配印案例",
+    "content": "坤造：壬戌 甲辰 丁丑 戊申。日主丁火，生于辰月。年干壬水正官，月干甲木正印。伤官配印，聪明多才。",
+    "tags": ["伤官", "正印", "案例"],
+    "relatedConcepts": ["classic-009", "rule-008"],
+    "confidence": "probable"
+  },
+  {
+    "id": "case-005",
+    "category": "case",
+    "source": "命理案例库",
+    "title": "从财格案例",
+    "content": "乾造：戊子 壬戌 癸卯 乙卯。日主癸水，生于戌月。满盘食伤财星，日主无根，从财格成立。",
+    "tags": ["从财格", "特殊格局", "案例"],
+    "relatedConcepts": ["classic-017", "rule-016"],
+    "confidence": "probable"
+  },
+  {
+    "id": "case-006",
+    "category": "case",
+    "source": "命理案例库",
+    "title": "印旺身弱案例",
+    "content": "坤造：癸亥 甲子 丁卯 甲辰。日主丁火，生于子月。满盘印星，日主无根，印旺身弱。多学少成，宜行比劫运。",
+    "tags": ["印星", "身弱", "案例"],
+    "relatedConcepts": ["classic-011", "rule-010"],
+    "confidence": "probable"
+  },
+  {
+    "id": "case-007",
+    "category": "case",
+    "source": "命理案例库",
+    "title": "比劫夺财案例",
+    "content": "乾造：庚午 戊寅 庚辰 庚辰。日主庚金，生于寅月。三庚一戊，比劫重重。财星被劫，早年破财。",
+    "tags": ["比劫", "财星", "案例"],
+    "relatedConcepts": ["classic-019", "rule-017"],
+    "confidence": "probable"
+  },
+  {
+    "id": "case-008",
+    "category": "case",
+    "source": "命理案例库",
+    "title": "桃花逢合案例",
+    "content": "坤造：丙申 辛卯 壬子 乙巳。日支子水桃花，月支卯木桃花，子卯刑，桃花逢刑。感情多波折。",
+    "tags": ["桃花", "感情", "案例"],
+    "relatedConcepts": ["classic-016", "rule-015"],
+    "confidence": "probable"
+  },
+  {
+    "id": "case-009",
+    "category": "case",
+    "source": "命理案例库",
+    "title": "天干五合案例",
+    "content": "乾造：甲辰 己巳 丙寅 戊子。年干甲木与月干己土相合，甲己合土。财星被合，早年财运被阻。",
+    "tags": ["合化", "财星", "案例"],
+    "relatedConcepts": ["rule-018"],
+    "confidence": "probable"
+  },
+  {
+    "id": "case-010",
+    "category": "case",
+    "source": "命理案例库",
+    "title": "地支六冲案例",
+    "content": "坤造：壬午 戊申 甲寅 庚午。日支寅木与时支午火半合火局，但年支午火与日支寅木不构成冲。此造寅申冲，驿马逢冲，多动少静。",
+    "tags": ["冲刑", "驿马", "案例"],
+    "relatedConcepts": ["rule-019"],
+    "confidence": "probable"
+  }
+]

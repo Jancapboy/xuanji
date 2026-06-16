@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-ink: #1a1a2e;
+  --color-cinnabar: #c23a30;
+  --color-paper: #f5f0e8;
+  --color-lapis: #2e5090;
+  --element-wood: #4a7c59;
+  --element-fire: #c23a30;
+  --element-earth: #8b6914;
+  --element-metal: #b8b8b8;
+  --element-water: #1e3a5f;
+}
+
+body {
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+  font-family: 'Noto Sans SC', system-ui, sans-serif;
+}
