@@ -1,0 +1,202 @@
+[
+  {
+    "id": "rule-001",
+    "category": "rule",
+    "source": "十神推算规则",
+    "title": "十神速查表",
+    "content": "以日干为基准：同我（比劫）、我生（食伤）、我克（财星）、克我（官杀）、生我（印绶）。阴阳相同为偏，阴阳相反为正。",
+    "tags": ["十神", "速查", "规则"],
+    "relatedConcepts": ["classic-001"],
+    "confidence": "certain"
+  },
+  {
+    "id": "rule-002",
+    "category": "rule",
+    "source": "五行生克规则",
+    "title": "五行力量计算",
+    "content": "天干本气得1分，地支本气得0.8分，藏干按比例得分。月令地支力量加倍。",
+    "tags": ["五行", "力量", "计算"],
+    "relatedConcepts": ["classic-003"],
+    "confidence": "certain"
+  },
+  {
+    "id": "rule-003",
+    "category": "rule",
+    "source": "日主强弱判断",
+    "title": "身强身弱判定",
+    "content": "身强：日主得月令、坐禄、得印比帮扶，力量超过全局40%。身弱：日主失令、坐衰、克泄交加，力量不足全局20%。",
+    "tags": ["日主", "强弱", "判定"],
+    "relatedConcepts": ["classic-004"],
+    "confidence": "certain"
+  },
+  {
+    "id": "rule-004",
+    "category": "rule",
+    "source": "十天干特性",
+    "title": "十天干喜忌",
+    "content": "甲木喜庚劈引丁，乙木喜丙癸；丙火喜壬，丁火喜甲；戊土喜甲疏，己土喜丙癸；庚金喜丁，辛金喜壬；壬水喜戊，癸水喜庚。",
+    "tags": ["十天干", "喜忌", "调候"],
+    "relatedConcepts": ["classic-005"],
+    "confidence": "probable"
+  },
+  {
+    "id": "rule-005",
+    "category": "rule",
+    "source": "格局判断规则",
+    "title": "月令取格法",
+    "content": "先看月令藏干透否，透者取格。不透者看本气。月令为格局之本，不可损伤。",
+    "tags": ["格局", "月令", "用神"],
+    "relatedConcepts": ["classic-006", "classic-008"],
+    "confidence": "certain"
+  },
+  {
+    "id": "rule-006",
+    "category": "rule",
+    "source": "地支藏干规则",
+    "title": "藏干力量分配",
+    "content": "四正地支藏干单一，力量100%。四生地藏干三元，主气60%、中气30%、余气10%。四库藏干三元，主气60%、中气30%、余气10%。",
+    "tags": ["地支", "藏干", "力量"],
+    "relatedConcepts": ["classic-007"],
+    "confidence": "certain"
+  },
+  {
+    "id": "rule-007",
+    "category": "rule",
+    "source": "用神选取规则",
+    "title": "用神选取法",
+    "content": "身强用克泄耗，身弱用生扶。格局用神以月令为主，调候用神以季节为主。二者兼用为上。",
+    "tags": ["用神", "选取", "格局"],
+    "relatedConcepts": ["classic-008"],
+    "confidence": "certain"
+  },
+  {
+    "id": "rule-008",
+    "category": "rule",
+    "source": "伤官见官",
+    "title": "伤官见官化解",
+    "content": "伤官见官，为祸百端。化解方法：用财通关、用印制伤、用比劫分官。",
+    "tags": ["伤官", "正官", "化解"],
+    "relatedConcepts": ["classic-009"],
+    "confidence": "probable"
+  },
+  {
+    "id": "rule-009",
+    "category": "rule",
+    "source": "财星规则",
+    "title": "财星与日主关系",
+    "content": "财多身弱，富屋贫人。身强财旺，富贵双全。财星被劫，破财消灾。",
+    "tags": ["财星", "日主", "关系"],
+    "relatedConcepts": ["classic-010"],
+    "confidence": "probable"
+  },
+  {
+    "id": "rule-010",
+    "category": "rule",
+    "source": "印星规则",
+    "title": "印星与学业",
+    "content": "印星旺者好学，正印主正统学问，偏印主偏门技艺。印旺身弱，多学少成；身旺印弱，聪明伶俐。",
+    "tags": ["印星", "学业", "性格"],
+    "relatedConcepts": ["classic-011"],
+    "confidence": "probable"
+  },
+  {
+    "id": "rule-011",
+    "category": "rule",
+    "source": "调候规则",
+    "title": "四时调候用神",
+    "content": "春木旺需金裁，夏火旺需水济，秋金旺需火炼，冬水旺需土制。",
+    "tags": ["调候", "季节", "用神"],
+    "relatedConcepts": ["classic-012"],
+    "confidence": "probable"
+  },
+  {
+    "id": "rule-012",
+    "category": "rule",
+    "source": "大运流年规则",
+    "title": "大运流年吉凶",
+    "content": "大运喜用神则吉，忌神则凶。流年与大运、命局形成三合、三会、冲克，吉凶应事。",
+    "tags": ["大运", "流年", "吉凶"],
+    "relatedConcepts": ["classic-013"],
+    "confidence": "probable"
+  },
+  {
+    "id": "rule-013",
+    "category": "rule",
+    "source": "食神规则",
+    "title": "食神制杀",
+    "content": "食神制杀，化险为夷。食神生财，富贵双全。食神太旺，贪图享受。",
+    "tags": ["食神", "七杀", "格局"],
+    "relatedConcepts": ["classic-014"],
+    "confidence": "probable"
+  },
+  {
+    "id": "rule-014",
+    "category": "rule",
+    "source": "七杀规则",
+    "title": "七杀有制化",
+    "content": "七杀有制化为权，无制为凶。制杀用食神，化杀用印星。",
+    "tags": ["七杀", "制化", "格局"],
+    "relatedConcepts": ["classic-015"],
+    "confidence": "probable"
+  },
+  {
+    "id": "rule-015",
+    "category": "rule",
+    "source": "桃花规则",
+    "title": "桃花查法",
+    "content": "年日支查：申子辰见酉，巳酉丑见午，亥卯未见子，寅午戌见卯。桃花逢合，酒色风流。",
+    "tags": ["桃花", "神煞", "感情"],
+    "relatedConcepts": ["classic-016"],
+    "confidence": "certain"
+  },
+  {
+    "id": "rule-016",
+    "category": "rule",
+    "source": "从格规则",
+    "title": "从格判定条件",
+    "content": "日主无根，满盘皆克泄，不得不从。从杀格、从财格、从儿格、从势格。",
+    "tags": ["从格", "特殊格局", "判定"],
+    "relatedConcepts": ["classic-017"],
+    "confidence": "probable"
+  },
+  {
+    "id": "rule-017",
+    "category": "rule",
+    "source": "比劫规则",
+    "title": "比劫与财运",
+    "content": "比劫旺者，争财夺利。身弱喜比劫帮身，身强忌比劫分财。",
+    "tags": ["比劫", "财运", "关系"],
+    "relatedConcepts": ["classic-019"],
+    "confidence": "probable"
+  },
+  {
+    "id": "rule-018",
+    "category": "rule",
+    "source": "合化规则",
+    "title": "天干五合地支六合",
+    "content": "甲己合土，乙庚合金，丙辛合水，丁壬合木，戊癸合火。子丑合土，寅亥合木，卯戌合火，辰酉合金，巳申合水，午未合土。",
+    "tags": ["合化", "天干", "地支"],
+    "relatedConcepts": ["classic-002"],
+    "confidence": "certain"
+  },
+  {
+    "id": "rule-019",
+    "category": "rule",
+    "source": "冲刑规则",
+    "title": "地支六冲三刑",
+    "content": "子午冲，丑未冲，寅申冲，卯酉冲，辰戌冲，巳亥冲。寅巳申三刑，丑戌未三刑。",
+    "tags": ["冲刑", "地支", "关系"],
+    "relatedConcepts": ["classic-002"],
+    "confidence": "certain"
+  },
+  {
+    "id": "rule-020",
+    "category": "rule",
+    "source": "纳音规则",
+    "title": "六十甲子纳音",
+    "content": "甲子乙丑海中金，丙寅丁卯炉中火，戊辰己巳大林木，庚午辛未路旁土，壬申癸酉剑锋金...",
+    "tags": ["纳音", "六十甲子", "基础"],
+    "relatedConcepts": ["classic-002"],
+    "confidence": "certain"
+  }
+]
