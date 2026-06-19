@@ -10,22 +10,35 @@ class KnowledgeBase {
   private loaded = false;
 
   async load(): Promise<void> {
-    if (this.loaded) return;
+    // 清除之前的数据，允许重新加载（修复路径错误后重试）
+    this.graph = {
+      entries: new Map(),
+      conceptIndex: new Map(),
+      tagIndex: new Map(),
+      sourceIndex: new Map(),
+    };
+    this.loaded = false;
 
     const files = ['classics.json', 'rules.json', 'cases.json'];
+    let successCount = 0;
     for (const file of files) {
       try {
-        const res = await fetch(`knowledge/${file}`);
+        const res = await fetch(`${import.meta.env.BASE_URL}knowledge/${file}`);
+        if (!res.ok) {
+          console.warn(`Failed to load ${file}: HTTP ${res.status}`);
+          continue;
+        }
         const entries: KnowledgeEntry[] = await res.json();
         for (const entry of entries) {
           this.addEntry(entry);
         }
+        successCount++;
       } catch (e) {
         console.warn(`Failed to load ${file}:`, e);
       }
     }
 
-    this.loaded = true;
+    this.loaded = successCount > 0;
   }
 
   private addEntry(entry: KnowledgeEntry): void {
