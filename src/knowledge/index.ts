@@ -15,7 +15,7 @@ class KnowledgeBase {
     const files = ['classics.json', 'rules.json', 'cases.json'];
     for (const file of files) {
       try {
-        const res = await fetch(`/knowledge/${file}`);
+        const res = await fetch(`knowledge/${file}`);
         const entries: KnowledgeEntry[] = await res.json();
         for (const entry of entries) {
           this.addEntry(entry);
