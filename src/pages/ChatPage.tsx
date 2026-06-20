@@ -89,7 +89,14 @@ export default function ChatPage() {
   const [input, setInput] = useState('');
   const [loading, setLoading] = useState(false);
   const [apiKey, setApiKey] = useState(() => {
-    return localStorage.getItem('xuanji_deepseek_key') || import.meta.env.VITE_DEEPSEEK_API_KEY || '';
+    const stored = localStorage.getItem('xuanji_deepseek_key');
+    if (stored) return stored;
+    // 默认 key，初始化时写入 localStorage（参考心镜：硬编码 + 用户可覆盖）
+    const defaultKey = 'sk-44a82b8778e84fb694205dd8a1002e4a';
+    if (defaultKey) {
+      localStorage.setItem('xuanji_deepseek_key', defaultKey);
+    }
+    return defaultKey;
   });
   const [showKeyInput, setShowKeyInput] = useState(false);
 
@@ -161,7 +168,7 @@ export default function ChatPage() {
         const abortController = new AbortController();
         abortRef.current = abortController;
 
-        const response = await fetch('https://api.deepseek.com/chat/completions', {
+        const response = await fetch('https://api.deepseek.com/v1/chat/completions', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
