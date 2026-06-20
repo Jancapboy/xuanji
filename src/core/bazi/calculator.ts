@@ -1,4 +1,4 @@
-import type { Stem, Branch, Pillar, BaziChart, BirthInfo, Element, TenGod } from '../types/bazi';
+import type { Stem, Branch, Pillar, BaziChart, BirthInfo, Element, TenGod } from '../../types/bazi';
 
 // ========== 基础数据表 ==========
 
