@@ -1,4 +1,5 @@
 import { create } from 'zustand';
+import { persist } from 'zustand/middleware';
 import type { BaziChart } from '../types/bazi';
 
 interface ChartStore {
@@ -10,28 +11,35 @@ interface ChartStore {
   getCurrentChart: () => BaziChart | undefined;
 }
 
-export const useChartStore = create<ChartStore>((set, get) => ({
-  charts: [],
-  currentChartId: null,
+export const useChartStore = create<ChartStore>()(
+  persist(
+    (set, get) => ({
+      charts: [],
+      currentChartId: null,
 
-  addChart: (chart) => {
-    set((state) => ({
-      charts: [...state.charts, chart],
-      currentChartId: chart.id,
-    }));
-  },
+      addChart: (chart) => {
+        set((state) => ({
+          charts: [...state.charts, chart],
+          currentChartId: chart.id,
+        }));
+      },
 
-  removeChart: (id) => {
-    set((state) => ({
-      charts: state.charts.filter((c) => c.id !== id),
-      currentChartId: state.currentChartId === id ? null : state.currentChartId,
-    }));
-  },
+      removeChart: (id) => {
+        set((state) => ({
+          charts: state.charts.filter((c) => c.id !== id),
+          currentChartId: state.currentChartId === id ? null : state.currentChartId,
+        }));
+      },
 
-  setCurrentChart: (id) => set({ currentChartId: id }),
+      setCurrentChart: (id) => set({ currentChartId: id }),
 
-  getCurrentChart: () => {
-    const { charts, currentChartId } = get();
-    return charts.find((c) => c.id === currentChartId);
-  },
-}));
+      getCurrentChart: () => {
+        const { charts, currentChartId } = get();
+        return charts.find((c) => c.id === currentChartId);
+      },
+    }),
+    {
+      name: 'xuanji_charts',
+    }
+  )
+);

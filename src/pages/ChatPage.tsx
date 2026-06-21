@@ -9,6 +9,41 @@ interface Message {
   isStreaming?: boolean;
 }
 
+const DEFAULT_WELCOME: Message = {
+  role: 'assistant',
+  content: '你好，我是玄机AI助手。我已连接你的命盘数据和知识库，可以基于八字命理为你解答问题。请直接提问。',
+};
+
+function getChatStorageKey(chartId: string | null) {
+  if (!chartId) return null;
+  return `xuanji_chat_history_${chartId}`;
+}
+
+function loadChatHistory(chartId: string | null): Message[] {
+  const key = getChatStorageKey(chartId);
+  if (!key) return [DEFAULT_WELCOME];
+  try {
+    const raw = localStorage.getItem(key);
+    if (raw) {
+      const parsed = JSON.parse(raw) as Message[];
+      if (Array.isArray(parsed) && parsed.length > 0) return parsed;
+    }
+  } catch {
+    // ignore parse error
+  }
+  return [DEFAULT_WELCOME];
+}
+
+function saveChatHistory(chartId: string | null, messages: Message[]) {
+  const key = getChatStorageKey(chartId);
+  if (!key) return;
+  try {
+    localStorage.setItem(key, JSON.stringify(messages));
+  } catch {
+    // ignore storage error (e.g. quota exceeded)
+  }
+}
+
 // 构建命盘描述文本
 function buildChartDescription(chart: BaziChart): string {
   const { year, month, day, hour, dayMaster, elementProfile, tenGodProfile, patterns } = chart;
@@ -80,18 +115,16 @@ async function retrieveKnowledge(query: string): Promise<string> {
 }
 
 export default function ChatPage() {
-  const [messages, setMessages] = useState<Message[]>([
-    {
-      role: 'assistant',
-      content: '你好，我是玄机AI助手。我已连接你的命盘数据和知识库，可以基于八字命理为你解答问题。请直接提问。',
-    },
-  ]);
+  const currentChart = useChartStore((s) => s.getCurrentChart());
+
+  const [messages, setMessages] = useState<Message[]>(() =>
+    loadChatHistory(currentChart?.id ?? null)
+  );
   const [input, setInput] = useState('');
   const [loading, setLoading] = useState(false);
   const [apiKey, setApiKey] = useState(() => {
     const stored = localStorage.getItem('xuanji_deepseek_key');
     if (stored) return stored;
-    // 默认 key，初始化时写入 localStorage（参考心镜：硬编码 + 用户可覆盖）
     const defaultKey = 'sk-44a82b8778e84fb694205dd8a1002e4a';
     if (defaultKey) {
       localStorage.setItem('xuanji_deepseek_key', defaultKey);
@@ -103,7 +136,16 @@ export default function ChatPage() {
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const abortRef = useRef<AbortController | null>(null);
 
-  const currentChart = useChartStore((s) => s.getCurrentChart());
+  // 切换命盘时加载对应聊天记录
+  useEffect(() => {
+    setMessages(loadChatHistory(currentChart?.id ?? null));
+  }, [currentChart?.id]);
+
+  // 保存聊天记录到 localStorage（过滤掉正在流式输出的消息）
+  useEffect(() => {
+    const toSave = messages.filter((m) => !m.isStreaming);
+    saveChatHistory(currentChart?.id ?? null, toSave);
+  }, [messages, currentChart?.id]);
 
   // 自动滚动到底部
   useEffect(() => {
