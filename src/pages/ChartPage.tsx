@@ -64,9 +64,14 @@ export default function ChartPage() {
 
   const elements = chart.elementProfile;
   const maxElement = Object.entries(elements).sort((a, b) => b[1] - a[1])[0];
+  const nayin = chart.nayin;
+  const twelveStage = chart.twelveStage;
+  const relations = chart.relations;
+  const shenSha = chart.shenSha;
+  const daYun = chart.daYun;
 
   return (
-    <div className="max-w-lg mx-auto px-4 py-6">
+    <div className="max-w-lg mx-auto px-4 py-6 space-y-4">
       {/* 命盘选择器 */}
       {charts.length > 1 && (
         <div className="mb-4 flex gap-2 overflow-x-auto pb-2">
@@ -95,7 +100,7 @@ export default function ChartPage() {
       </div>
 
       {/* 日主信息 */}
-      <div className="bg-white rounded-xl p-4 mb-4 shadow-sm">
+      <div className="bg-white rounded-xl p-4 shadow-sm">
         <div className="text-center">
           <span className="text-3xl font-serif-zh text-cinnabar">{chart.dayMaster}</span>
           <span className="text-gray-500 ml-2">日主</span>
@@ -105,8 +110,93 @@ export default function ChartPage() {
         </div>
       </div>
 
+      {/* 纳音五行 */}
+      {nayin && (
+        <div className="bg-white rounded-xl p-4 shadow-sm">
+          <h3 className="text-sm font-medium text-gray-600 mb-3">纳音五行</h3>
+          <div className="grid grid-cols-4 gap-2 text-center text-sm">
+            {Object.entries(nayin).map(([key, val]) => (
+              <div key={key} className="bg-gray-50 rounded-lg p-2">
+                <div className="text-xs text-gray-400">{key === 'year' ? '年' : key === 'month' ? '月' : key === 'day' ? '日' : '时'}</div>
+                <div className="font-medium">{val}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {/* 十二长生 */}
+      {twelveStage && (
+        <div className="bg-white rounded-xl p-4 shadow-sm">
+          <h3 className="text-sm font-medium text-gray-600 mb-3">十二长生</h3>
+          <div className="grid grid-cols-4 gap-2 text-center text-sm">
+            {Object.entries(twelveStage).map(([key, val]) => (
+              <div key={key} className="bg-gray-50 rounded-lg p-2">
+                <div className="text-xs text-gray-400">{key === 'year' ? '年' : key === 'month' ? '月' : key === 'day' ? '日' : '时'}</div>
+                <div className="font-medium">{val}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {/* 合冲刑害 */}
+      {relations && (relations.branch.length > 0 || relations.stem.length > 0) && (
+        <div className="bg-white rounded-xl p-4 shadow-sm">
+          <h3 className="text-sm font-medium text-gray-600 mb-3">天干地支关系</h3>
+          <div className="flex flex-wrap gap-2">
+            {relations.stem.map((r, i) => (
+              <span key={`s-${i}`} className="px-2 py-1 bg-blue-50 text-blue-600 rounded text-sm">{r}</span>
+            ))}
+            {relations.branch.map((r, i) => (
+              <span key={`b-${i}`} className="px-2 py-1 bg-orange-50 text-orange-600 rounded text-sm">{r}</span>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {/* 神煞 */}
+      {shenSha && (
+        <div className="bg-white rounded-xl p-4 shadow-sm">
+          <h3 className="text-sm font-medium text-gray-600 mb-3">神煞</h3>
+          <div className="space-y-2">
+            {Object.entries(shenSha).map(([name, values]) => (
+              values.length > 0 && (
+                <div key={name} className="flex items-center gap-2 text-sm">
+                  <span className="text-gray-500 w-16 shrink-0">{name}</span>
+                  <span className="px-2 py-0.5 bg-purple-50 text-purple-600 rounded">{values.join('、')}</span>
+                </div>
+              )
+            ))}
+          </div>
+        </div>
+      )}
+
+      {/* 大运 */}
+      {daYun && daYun.length > 0 && (
+        <div className="bg-white rounded-xl p-4 shadow-sm">
+          <h3 className="text-sm font-medium text-gray-600 mb-3">大运</h3>
+          <div className="grid grid-cols-4 gap-2 text-center text-sm">
+            {daYun.slice(0, 4).map((dy, i) => (
+              <div key={i} className="bg-gray-50 rounded-lg p-2">
+                <div className="text-xs text-gray-400">{dy.ageRange}</div>
+                <div className="font-medium">{dy.stem}{dy.branch}</div>
+              </div>
+            ))}
+          </div>
+          <div className="grid grid-cols-4 gap-2 text-center text-sm mt-2">
+            {daYun.slice(4, 8).map((dy, i) => (
+              <div key={i} className="bg-gray-50 rounded-lg p-2">
+                <div className="text-xs text-gray-400">{dy.ageRange}</div>
+                <div className="font-medium">{dy.stem}{dy.branch}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
       {/* 五行力量 */}
-      <div className="bg-white rounded-xl p-4 mb-4 shadow-sm">
+      <div className="bg-white rounded-xl p-4 shadow-sm">
         <h3 className="text-sm font-medium text-gray-600 mb-3">五行力量</h3>
         <div className="space-y-2">
           {Object.entries(elements).map(([element, value]) => {

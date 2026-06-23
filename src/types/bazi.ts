@@ -32,6 +32,12 @@ export interface BaziChart {
   elementProfile: Record<Element, number>;
   tenGodProfile: Record<TenGod, number>;
   patterns: string[];
+  // 第二批新增
+  nayin?: { year: string; month: string; day: string; hour: string };
+  twelveStage?: { year: string; month: string; day: string; hour: string };
+  relations?: { branch: string[]; stem: string[] };
+  shenSha?: Record<string, string[]>;
+  daYun?: Array<{ stem: Stem; branch: Branch; ageRange: string; startAge: number }>;
 }
 
 // 出生信息
