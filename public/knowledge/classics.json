@@ -5,10 +5,20 @@
     "source": "《子平真诠》",
     "title": "十神定义与日主关系",
     "content": "十神以日干为主，见其他天干而定。同我者为比劫，我生者为食伤，我克者为财星，克我者为官杀，生我者为印绶。阳见阳、阴见阴为偏，阳见阴、阴见阳为正。",
-    "tags": ["十神", "基础", "定义"],
-    "relatedConcepts": ["classic-002", "rule-001"],
+    "tags": [
+      "十神",
+      "基础",
+      "定义"
+    ],
+    "relatedConcepts": [
+      "classic-002",
+      "rule-001"
+    ],
     "confidence": "certain",
-    "metadata": { "author": "沈孝瞻", "dynasty": "清" }
+    "metadata": {
+      "author": "沈孝瞻",
+      "dynasty": "清"
+    }
   },
   {
     "id": "classic-002",
@@ -16,10 +26,20 @@
     "source": "《渊海子平》",
     "title": "天干地支阴阳属性",
     "content": "甲丙戊庚壬为阳干，乙丁己辛癸为阴干。子寅辰午申戌为阳支，丑卯巳未酉亥为阴支。",
-    "tags": ["天干", "地支", "阴阳", "基础"],
-    "relatedConcepts": ["classic-001"],
+    "tags": [
+      "天干",
+      "地支",
+      "阴阳",
+      "基础"
+    ],
+    "relatedConcepts": [
+      "classic-001"
+    ],
     "confidence": "certain",
-    "metadata": { "author": "徐子平", "dynasty": "宋" }
+    "metadata": {
+      "author": "徐子平",
+      "dynasty": "宋"
+    }
   },
   {
     "id": "classic-003",
@@ -27,10 +47,20 @@
     "source": "《三命通会》",
     "title": "五行生克关系",
     "content": "金生水，水生木，木生火，火生土，土生金。金克木，木克土，土克水，水克火，火克金。",
-    "tags": ["五行", "生克", "基础"],
-    "relatedConcepts": ["classic-002", "rule-002"],
+    "tags": [
+      "五行",
+      "生克",
+      "基础"
+    ],
+    "relatedConcepts": [
+      "classic-002",
+      "rule-002"
+    ],
     "confidence": "certain",
-    "metadata": { "author": "万民英", "dynasty": "明" }
+    "metadata": {
+      "author": "万民英",
+      "dynasty": "明"
+    }
   },
   {
     "id": "classic-004",
@@ -38,10 +68,20 @@
     "source": "《滴天髓》",
     "title": "论日主强弱",
     "content": "能知衰旺之真机，其于三命之奥，思过半矣。日主强弱，须看月令、坐支、帮扶、克泄。",
-    "tags": ["日主", "强弱", "格局"],
-    "relatedConcepts": ["rule-003", "case-001"],
+    "tags": [
+      "日主",
+      "强弱",
+      "格局"
+    ],
+    "relatedConcepts": [
+      "rule-003",
+      "case-001"
+    ],
     "confidence": "certain",
-    "metadata": { "author": "任铁樵", "dynasty": "清" }
+    "metadata": {
+      "author": "任铁樵",
+      "dynasty": "清"
+    }
   },
   {
     "id": "classic-005",
@@ -49,10 +89,19 @@
     "source": "《穷通宝鉴》",
     "title": "论甲木",
     "content": "甲木参天，脱胎要火。春不容金，秋不容土。火炽乘龙，水宕骑虎。地润天和，植立千古。",
-    "tags": ["甲木", "十天干", "调候"],
-    "relatedConcepts": ["rule-004"],
+    "tags": [
+      "甲木",
+      "十天干",
+      "调候"
+    ],
+    "relatedConcepts": [
+      "rule-004"
+    ],
     "confidence": "certain",
-    "metadata": { "author": "余春台", "dynasty": "清" }
+    "metadata": {
+      "author": "余春台",
+      "dynasty": "清"
+    }
   },
   {
     "id": "classic-006",
@@ -60,10 +109,20 @@
     "source": "《子平真诠》",
     "title": "论正官格",
     "content": "正官格，喜身旺、印绶、食神以制杀。忌身弱、伤官见官、官杀混杂。",
-    "tags": ["正官格", "格局", "十神"],
-    "relatedConcepts": ["rule-005", "case-002"],
+    "tags": [
+      "正官格",
+      "格局",
+      "十神"
+    ],
+    "relatedConcepts": [
+      "rule-005",
+      "case-002"
+    ],
     "confidence": "certain",
-    "metadata": { "author": "沈孝瞻", "dynasty": "清" }
+    "metadata": {
+      "author": "沈孝瞻",
+      "dynasty": "清"
+    }
   },
   {
     "id": "classic-007",
@@ -71,10 +130,20 @@
     "source": "《三命通会》",
     "title": "地支藏干原理",
     "content": "子午卯酉四正，藏干专一。寅申巳亥四生，藏干三元。辰戌丑未四库，藏干杂气。",
-    "tags": ["地支", "藏干", "基础"],
-    "relatedConcepts": ["classic-002", "rule-006"],
+    "tags": [
+      "地支",
+      "藏干",
+      "基础"
+    ],
+    "relatedConcepts": [
+      "classic-002",
+      "rule-006"
+    ],
     "confidence": "certain",
-    "metadata": { "author": "万民英", "dynasty": "明" }
+    "metadata": {
+      "author": "万民英",
+      "dynasty": "明"
+    }
   },
   {
     "id": "classic-008",
@@ -82,10 +151,20 @@
     "source": "《滴天髓》",
     "title": "论用神",
     "content": "八字用神，专求月令。以日干配月令地支，而生克不同，格局分焉。",
-    "tags": ["用神", "月令", "格局"],
-    "relatedConcepts": ["classic-004", "rule-007"],
+    "tags": [
+      "用神",
+      "月令",
+      "格局"
+    ],
+    "relatedConcepts": [
+      "classic-004",
+      "rule-007"
+    ],
     "confidence": "certain",
-    "metadata": { "author": "任铁樵", "dynasty": "清" }
+    "metadata": {
+      "author": "任铁樵",
+      "dynasty": "清"
+    }
   },
   {
     "id": "classic-009",
@@ -93,10 +172,20 @@
     "source": "《渊海子平》",
     "title": "论伤官",
     "content": "伤官者，我生之子也。为人性傲，多才多能。伤官见官，为祸百端。",
-    "tags": ["伤官", "十神", "性格"],
-    "relatedConcepts": ["classic-001", "rule-008"],
+    "tags": [
+      "伤官",
+      "十神",
+      "性格"
+    ],
+    "relatedConcepts": [
+      "classic-001",
+      "rule-008"
+    ],
     "confidence": "certain",
-    "metadata": { "author": "徐子平", "dynasty": "宋" }
+    "metadata": {
+      "author": "徐子平",
+      "dynasty": "宋"
+    }
   },
   {
     "id": "classic-010",
@@ -104,10 +193,21 @@
     "source": "《子平真诠》",
     "title": "论财星",
     "content": "财为我克，人之所欲。正财者，正当之财；偏财者，意外之财。财多身弱，富屋贫人。",
-    "tags": ["财星", "正财", "偏财", "十神"],
-    "relatedConcepts": ["classic-001", "rule-009"],
+    "tags": [
+      "财星",
+      "正财",
+      "偏财",
+      "十神"
+    ],
+    "relatedConcepts": [
+      "classic-001",
+      "rule-009"
+    ],
     "confidence": "certain",
-    "metadata": { "author": "沈孝瞻", "dynasty": "清" }
+    "metadata": {
+      "author": "沈孝瞻",
+      "dynasty": "清"
+    }
   },
   {
     "id": "classic-011",
@@ -115,10 +215,21 @@
     "source": "《三命通会》",
     "title": "论印星",
     "content": "印为生我之母。正印慈祥，偏印孤傲。印旺身弱，多学少成；身旺印弱，聪明伶俐。",
-    "tags": ["印星", "正印", "偏印", "十神"],
-    "relatedConcepts": ["classic-001", "rule-010"],
+    "tags": [
+      "印星",
+      "正印",
+      "偏印",
+      "十神"
+    ],
+    "relatedConcepts": [
+      "classic-001",
+      "rule-010"
+    ],
     "confidence": "certain",
-    "metadata": { "author": "万民英", "dynasty": "明" }
+    "metadata": {
+      "author": "万民英",
+      "dynasty": "明"
+    }
   },
   {
     "id": "classic-012",
@@ -126,10 +237,20 @@
     "source": "《穷通宝鉴》",
     "title": "论调候用神",
     "content": "寒暖燥湿，四时之候也。冬生者需火调候，夏生者需水调候。",
-    "tags": ["调候", "用神", "季节"],
-    "relatedConcepts": ["classic-005", "rule-011"],
+    "tags": [
+      "调候",
+      "用神",
+      "季节"
+    ],
+    "relatedConcepts": [
+      "classic-005",
+      "rule-011"
+    ],
     "confidence": "certain",
-    "metadata": { "author": "余春台", "dynasty": "清" }
+    "metadata": {
+      "author": "余春台",
+      "dynasty": "清"
+    }
   },
   {
     "id": "classic-013",
@@ -137,10 +258,19 @@
     "source": "《滴天髓》",
     "title": "论大运流年",
     "content": "大运管十年之吉凶，流年管一年之休咎。大运为先，流年为后，二者参看。",
-    "tags": ["大运", "流年", "运势"],
-    "relatedConcepts": ["rule-012"],
+    "tags": [
+      "大运",
+      "流年",
+      "运势"
+    ],
+    "relatedConcepts": [
+      "rule-012"
+    ],
     "confidence": "certain",
-    "metadata": { "author": "任铁樵", "dynasty": "清" }
+    "metadata": {
+      "author": "任铁樵",
+      "dynasty": "清"
+    }
   },
   {
     "id": "classic-014",
@@ -148,10 +278,20 @@
     "source": "《渊海子平》",
     "title": "论食神",
     "content": "食神者，我生之子，阳生阳、阴生阴。食神制杀，化险为夷；食神生财，富贵双全。",
-    "tags": ["食神", "十神", "格局"],
-    "relatedConcepts": ["classic-001", "rule-013"],
+    "tags": [
+      "食神",
+      "十神",
+      "格局"
+    ],
+    "relatedConcepts": [
+      "classic-001",
+      "rule-013"
+    ],
     "confidence": "certain",
-    "metadata": { "author": "徐子平", "dynasty": "宋" }
+    "metadata": {
+      "author": "徐子平",
+      "dynasty": "宋"
+    }
   },
   {
     "id": "classic-015",
@@ -159,10 +299,20 @@
     "source": "《子平真诠》",
     "title": "论七杀",
     "content": "七杀者，克我之阳见阳、阴见阴也。七杀有制化为权，无制为凶。",
-    "tags": ["七杀", "十神", "格局"],
-    "relatedConcepts": ["classic-001", "rule-014"],
+    "tags": [
+      "七杀",
+      "十神",
+      "格局"
+    ],
+    "relatedConcepts": [
+      "classic-001",
+      "rule-014"
+    ],
     "confidence": "certain",
-    "metadata": { "author": "沈孝瞻", "dynasty": "清" }
+    "metadata": {
+      "author": "沈孝瞻",
+      "dynasty": "清"
+    }
   },
   {
     "id": "classic-016",
@@ -170,10 +320,19 @@
     "source": "《三命通会》",
     "title": "论桃花",
     "content": "申子辰在酉，巳酉丑在午，亥卯未在子，寅午戌在卯。桃花逢合，酒色风流。",
-    "tags": ["桃花", "神煞", "感情"],
-    "relatedConcepts": ["rule-015"],
+    "tags": [
+      "桃花",
+      "神煞",
+      "感情"
+    ],
+    "relatedConcepts": [
+      "rule-015"
+    ],
     "confidence": "certain",
-    "metadata": { "author": "万民英", "dynasty": "明" }
+    "metadata": {
+      "author": "万民英",
+      "dynasty": "明"
+    }
   },
   {
     "id": "classic-017",
@@ -181,10 +340,20 @@
     "source": "《滴天髓》",
     "title": "论从格",
     "content": "从者，顺从也。日主无根，满盘皆克泄，不得不从。从杀、从财、从儿、从势。",
-    "tags": ["从格", "特殊格局", "身弱"],
-    "relatedConcepts": ["classic-004", "rule-016"],
+    "tags": [
+      "从格",
+      "特殊格局",
+      "身弱"
+    ],
+    "relatedConcepts": [
+      "classic-004",
+      "rule-016"
+    ],
     "confidence": "certain",
-    "metadata": { "author": "任铁樵", "dynasty": "清" }
+    "metadata": {
+      "author": "任铁樵",
+      "dynasty": "清"
+    }
   },
   {
     "id": "classic-018",
@@ -192,10 +361,20 @@
     "source": "《穷通宝鉴》",
     "title": "论庚金",
     "content": "庚金带煞，刚健为最。得水而清，得火而锐。土润则生，土干则脆。",
-    "tags": ["庚金", "十天干", "调候"],
-    "relatedConcepts": ["classic-005", "rule-004"],
+    "tags": [
+      "庚金",
+      "十天干",
+      "调候"
+    ],
+    "relatedConcepts": [
+      "classic-005",
+      "rule-004"
+    ],
     "confidence": "certain",
-    "metadata": { "author": "余春台", "dynasty": "清" }
+    "metadata": {
+      "author": "余春台",
+      "dynasty": "清"
+    }
   },
   {
     "id": "classic-019",
@@ -203,10 +382,20 @@
     "source": "《渊海子平》",
     "title": "论比肩劫财",
     "content": "比肩者，与我同类。劫财者，夺我之财。比劫太旺，争财夺利；太弱则无人帮扶。",
-    "tags": ["比肩", "劫财", "十神"],
-    "relatedConcepts": ["classic-001", "rule-017"],
+    "tags": [
+      "比肩",
+      "劫财",
+      "十神"
+    ],
+    "relatedConcepts": [
+      "classic-001",
+      "rule-017"
+    ],
     "confidence": "certain",
-    "metadata": { "author": "徐子平", "dynasty": "宋" }
+    "metadata": {
+      "author": "徐子平",
+      "dynasty": "宋"
+    }
   },
   {
     "id": "classic-020",
@@ -214,9 +403,254 @@
     "source": "《子平真诠》",
     "title": "论格局成败",
     "content": "成格者，月令透干，配合有情。破格者，月令被伤，配合无情。",
-    "tags": ["格局", "成败", "用神"],
-    "relatedConcepts": ["classic-008", "rule-007"],
+    "tags": [
+      "格局",
+      "成败",
+      "用神"
+    ],
+    "relatedConcepts": [
+      "classic-008",
+      "rule-007"
+    ],
     "confidence": "certain",
-    "metadata": { "author": "沈孝瞻", "dynasty": "清" }
+    "metadata": {
+      "author": "沈孝瞻",
+      "dynasty": "清"
+    }
+  },
+  {
+    "id": "classic-021",
+    "category": "classic",
+    "source": "《千里命稿》",
+    "title": "断命要点与宫位论法",
+    "content": "先看格局高低，再看用神有力无力。看大运是否帮扶用神，流年是否引动关键位置。断事需结合十神所代表的人事和宫位：年柱为祖上/幼年(1-16岁)，月柱为父母/青年(17-32岁)，日柱为自己配偶/中年(33-48岁)，时柱为子女/晚年(49岁以后)。",
+    "tags": [
+      "宫位",
+      "年龄",
+      "断命",
+      "千里命稿"
+    ],
+    "relatedConcepts": [
+      "rule-003",
+      "rule-005",
+      "rule-012"
+    ],
+    "confidence": "certain",
+    "metadata": {
+      "author": "韦千里",
+      "dynasty": "民国"
+    }
+  },
+  {
+    "id": "classic-022",
+    "category": "classic",
+    "source": "《协纪辨方书》",
+    "title": "神煞辅助论命原则",
+    "content": "神煞为辅助参考，不可单独论命。需配合格局旺衰综合判断。吉神逢克则力减，凶神有制则祸轻。常用吉神：天乙贵人、天德贵人、月德贵人、文昌、学堂。常用凶神：羊刃、亡神、劫煞、灾煞、六厄、孤辰、寡宿。",
+    "tags": [
+      "神煞",
+      "协纪辨方书",
+      "吉凶",
+      "辅助"
+    ],
+    "relatedConcepts": [
+      "classic-016",
+      "rule-015"
+    ],
+    "confidence": "certain",
+    "metadata": {
+      "author": "允禄等",
+      "dynasty": "清"
+    }
+  },
+  {
+    "id": "classic-023",
+    "category": "classic",
+    "source": "《神峰通考》",
+    "title": "病药说与命理考辨",
+    "content": "强调'病药说'：命局如人体，有病方为贵，无病不为奇。命局有缺陷（病），大运或流年来了'药'（喜用神），方有成就。反对机械套用神煞，主张以五行生克为根本。格局虽有定法，但变通更重要，不可执一而论。",
+    "tags": [
+      "病药",
+      "考辨",
+      "神峰通考",
+      "用神"
+    ],
+    "relatedConcepts": [
+      "classic-008",
+      "rule-007",
+      "classic-004"
+    ],
+    "confidence": "certain",
+    "metadata": {
+      "author": "张楠",
+      "dynasty": "明"
+    }
+  },
+  {
+    "id": "classic-024",
+    "category": "classic",
+    "source": "《果老星宗》",
+    "title": "命宫推算法与星命合参",
+    "content": "星宗以命宫、身宫为核心，用七政四余论命。八字分析时若需参考命宫，可用口诀：'寅上起月，顺数至生时，所落之宫即为命宫'。星宗内容在八字分析中仅作辅助参考。",
+    "tags": [
+      "命宫",
+      "星宗",
+      "辅助",
+      "果老星宗"
+    ],
+    "relatedConcepts": [
+      "rule-019"
+    ],
+    "confidence": "probable",
+    "metadata": {
+      "author": "张果老",
+      "dynasty": "唐"
+    }
+  },
+  {
+    "id": "classic-025",
+    "category": "classic",
+    "source": "《三命通会》",
+    "title": "常用神煞详解",
+    "content": "天乙贵人：甲戊庚牛羊，乙己鼠猴乡，丙丁猪鸡位，壬癸兔蛇藏，庚辛逢虎马。主逢凶化吉。文昌贵人：主聪明好学、文才出众。驿马：主动、旅行、迁移。年支或日支查之：申子辰马在寅，寅午戌马在申，巳酉丑马在亥，亥卯未马在巳。华盖：主孤独、宗教、学术。申子辰在辰，寅午戌在戌，巳酉丑在丑，亥卯未在未。",
+    "tags": [
+      "天乙贵人",
+      "文昌",
+      "驿马",
+      "华盖",
+      "神煞"
+    ],
+    "relatedConcepts": [
+      "classic-016",
+      "rule-015",
+      "classic-022"
+    ],
+    "confidence": "certain",
+    "metadata": {
+      "author": "万民英",
+      "dynasty": "明"
+    }
+  },
+  {
+    "id": "classic-026",
+    "category": "classic",
+    "source": "《穷通宝鉴》",
+    "title": "调候用神十二月论",
+    "content": "论命首重调候，其次才论格局旺衰。若命局缺调候之字，格局再好也难发挥。夏生火旺须用水调候，冬生水旺须用火调候。各日干十二月调候用神各有不同。甲木生于正月：初春余寒未尽，先用丙火暖之，后用癸水滋之，丙癸两透富贵双全。庚金生于十一月：寒冬水冷金沉，必用丙火解冻，甲木引丁。",
+    "tags": [
+      "调候",
+      "十二月",
+      "穷通宝鉴",
+      "用神"
+    ],
+    "relatedConcepts": [
+      "classic-005",
+      "classic-012",
+      "rule-004",
+      "rule-011"
+    ],
+    "confidence": "certain",
+    "metadata": {
+      "author": "余春台",
+      "dynasty": "清"
+    }
+  },
+  {
+    "id": "classic-027",
+    "category": "classic",
+    "source": "《滴天髓》",
+    "title": "旺衰三得与气势流通",
+    "content": "天道看天干配合，地道看地支配合，人道看干支配合。旺衰判断三得：得令（月令长生帝旺最重要）、得地（其他地支有根）、得势（天干有比劫印星帮扶）。气势流通喜五行一路顺生，不喜阻滞。旺极宜泄不宜克，衰极宜扶不宜帮（从弱格例外）。",
+    "tags": [
+      "旺衰",
+      "气势",
+      "流通",
+      "滴天髓"
+    ],
+    "relatedConcepts": [
+      "classic-004",
+      "rule-003",
+      "rule-007"
+    ],
+    "confidence": "certain",
+    "metadata": {
+      "author": "任铁樵",
+      "dynasty": "清"
+    }
+  },
+  {
+    "id": "classic-028",
+    "category": "classic",
+    "source": "《渊海子平》",
+    "title": "十神六亲与格局总论",
+    "content": "正印为母，偏财为父（男命）。正财为妻（男命），正官为夫（女命）。食神伤官为子女（女命）。比肩为兄弟，劫财为姐妹（男命）。正格：正官、偏官、正财、偏财、正印、偏印、食神、伤官。特殊格：从格、化气格、建禄格、羊刃格。",
+    "tags": [
+      "六亲",
+      "格局",
+      "十神",
+      "渊海子平"
+    ],
+    "relatedConcepts": [
+      "classic-001",
+      "rule-005",
+      "rule-006"
+    ],
+    "confidence": "certain",
+    "metadata": {
+      "author": "徐子平",
+      "dynasty": "宋"
+    }
+  },
+  {
+    "id": "classic-029",
+    "category": "classic",
+    "source": "《子平真诠》",
+    "title": "格局成败与用神相神",
+    "content": "格局以清纯为贵，杂浊为贱。用神一位为清，多用神或受冲克为浊。成格条件：用神有力、不受克破、有相神辅助。破格条件：用神受克、忌神当令无制、格局混杂。用神是命局最关键的十神，相神辅助用神，喜神生扶用神，忌神克破用神。",
+    "tags": [
+      "格局",
+      "成败",
+      "用神",
+      "相神",
+      "子平真诠"
+    ],
+    "relatedConcepts": [
+      "classic-006",
+      "classic-008",
+      "rule-005",
+      "rule-007"
+    ],
+    "confidence": "certain",
+    "metadata": {
+      "author": "沈孝瞻",
+      "dynasty": "清"
+    }
+  },
+  {
+    "id": "classic-030",
+    "category": "classic",
+    "source": "《三命通会》",
+    "title": "核心格局详解",
+    "content": "正官格：月支藏正官透出天干，主为人端正有贵气，忌伤官破格。七杀格：月支藏七杀透出，主刚烈果断，须食神制杀或印化杀。正财格/偏财格：月支藏财星透出，主勤劳致富，忌比劫争财。正印格/偏印格：月支藏印星透出，主聪慧好学，偏印忌见食神（枭神夺食）。食神格：月支藏食神透出，主食禄丰厚，忌枭印夺食。伤官格：月支藏伤官透出，主才华横溢，伤官见官为祸百端。",
+    "tags": [
+      "格局",
+      "正官",
+      "七杀",
+      "财星",
+      "印星",
+      "食神",
+      "伤官"
+    ],
+    "relatedConcepts": [
+      "classic-006",
+      "rule-005",
+      "rule-013",
+      "rule-014"
+    ],
+    "confidence": "certain",
+    "metadata": {
+      "author": "万民英",
+      "dynasty": "明"
+    }
   }
 ]
