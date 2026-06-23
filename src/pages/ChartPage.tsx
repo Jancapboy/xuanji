@@ -19,18 +19,30 @@ function PillarCard({ label, pillar, dayMaster }: { label: string; pillar: Pilla
     '水': 'text-element-water',
   }[BRANCH_ELEMENT[pillar.branch]];
 
-  const tenGod = calculateTenGod(dayMaster as any, pillar.stem);
+  const stemTenGod = calculateTenGod(dayMaster as any, pillar.stem);
+  const branchTenGod = pillar.tenGod || calculateTenGod(dayMaster as any, pillar.branch as any);
 
   return (
-    <div className="bg-white rounded-lg p-4 shadow-sm text-center">
+    <div className="bg-white rounded-lg p-3 shadow-sm text-center">
       <div className="text-xs text-gray-400 mb-1">{label}</div>
-      <div className="text-2xl font-serif-zh">
+      {/* 天干 + 十神 */}
+      <div className="text-2xl font-serif-zh leading-tight">
         <span className={stemColor}>{pillar.stem}</span>
-        <span className={branchColor}>{pillar.branch}</span>
+        <span className="text-xs text-gray-400 ml-1">{stemTenGod}</span>
       </div>
-      <div className="text-xs text-gray-500 mt-1">{tenGod}</div>
-      <div className="text-xs text-gray-400 mt-1">
-        {pillar.hiddenStems.map(h => h.stem).join('·')}
+      {/* 地支 + 十神 */}
+      <div className="text-xl font-serif-zh leading-tight mt-1">
+        <span className={branchColor}>{pillar.branch}</span>
+        <span className="text-xs text-gray-400 ml-1">{branchTenGod}</span>
+      </div>
+      {/* 藏干 + 十神 */}
+      <div className="text-xs text-gray-500 mt-2 space-y-0.5">
+        {pillar.hiddenStems.map((h, i) => (
+          <div key={i} className="flex justify-center gap-1">
+            <span>{h.stem}</span>
+            <span className="text-gray-400">{h.tenGod}</span>
+          </div>
+        ))}
       </div>
     </div>
   );

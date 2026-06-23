@@ -17,8 +17,8 @@ export type TenGod = '比肩' | '劫财' | '食神' | '伤官' | '偏财' | '正
 export interface Pillar {
   stem: Stem;
   branch: Branch;
-  hiddenStems: Array<{ stem: Stem; percentage: number }>;
-  tenGod?: TenGod;
+  hiddenStems: Array<{ stem: Stem; percentage: number; tenGod?: TenGod }>;
+  tenGod?: TenGod; // 地支十神（相对于日主）
 }
 
 // 四柱命盘
