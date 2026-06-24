@@ -1,49 +1,313 @@
+import { useState } from 'react';
 import { useChartStore } from '../stores/chartStore';
 import { calculateTenGod, STEM_ELEMENT, BRANCH_ELEMENT } from '../core/bazi/calculator';
-import type { Pillar } from '../types/bazi';
+import type { Pillar, BaziChart } from '../types/bazi';
 
-function PillarCard({ label, pillar, dayMaster }: { label: string; pillar: Pillar; dayMaster: string }) {
-  const stemColor = {
-    '木': 'text-element-wood',
-    '火': 'text-element-fire',
-    '土': 'text-element-earth',
-    '金': 'text-element-metal',
-    '水': 'text-element-water',
-  }[STEM_ELEMENT[pillar.stem]];
+// 五行颜色
+const ELEMENT_COLORS: Record<string, string> = {
+  '木': 'text-element-wood',
+  '火': 'text-element-fire',
+  '土': 'text-element-earth',
+  '金': 'text-element-metal',
+  '水': 'text-element-water',
+};
 
-  const branchColor = {
-    '木': 'text-element-wood',
-    '火': 'text-element-fire',
-    '土': 'text-element-earth',
-    '金': 'text-element-metal',
-    '水': 'text-element-water',
-  }[BRANCH_ELEMENT[pillar.branch]];
+const ELEMENT_BG: Record<string, string> = {
+  '木': 'bg-green-50',
+  '火': 'bg-red-50',
+  '土': 'bg-yellow-50',
+  '金': 'bg-gray-100',
+  '水': 'bg-blue-50',
+};
 
-  const stemTenGod = calculateTenGod(dayMaster as any, pillar.stem);
-  const branchTenGod = pillar.tenGod || calculateTenGod(dayMaster as any, pillar.branch as any);
+// 传统四柱排盘组件
+function TraditionalChart({ chart }: { chart: BaziChart }) {
+  const pillars = [
+    { label: '年柱', key: 'year' as const, pillar: chart.year },
+    { label: '月柱', key: 'month' as const, pillar: chart.month },
+    { label: '日柱', key: 'day' as const, pillar: chart.day },
+    { label: '时柱', key: 'hour' as const, pillar: chart.hour },
+  ];
+
+  // 十神颜色
+  const tenGodColor = (tg: string) => {
+    const colors: Record<string, string> = {
+      '比肩': 'text-element-wood', '劫财': 'text-element-wood',
+      '食神': 'text-element-fire', '伤官': 'text-element-fire',
+      '偏财': 'text-element-earth', '正财': 'text-element-earth',
+      '七杀': 'text-element-metal', '正官': 'text-element-metal',
+      '偏印': 'text-element-water', '正印': 'text-element-water',
+    };
+    return colors[tg] || 'text-gray-400';
+  };
 
   return (
-    <div className="bg-white rounded-lg p-3 shadow-sm text-center">
-      <div className="text-xs text-gray-400 mb-1">{label}</div>
-      {/* 天干 + 十神 */}
-      <div className="text-2xl font-serif-zh leading-tight">
-        <span className={stemColor}>{pillar.stem}</span>
-        <span className="text-xs text-gray-400 ml-1">{stemTenGod}</span>
+    <div className="bg-white rounded-xl p-4 shadow-sm overflow-x-auto">
+      <div className="min-w-[320px]">
+        {/* 标签行 */}
+        <div className="grid grid-cols-4 gap-1 mb-2 text-center">
+          {pillars.map(({ label }) => (
+            <div key={label} className="text-xs text-gray-400 font-medium">{label}</div>
+          ))}
+        </div>
+
+        {/* 天干十神行 */}
+        <div className="grid grid-cols-4 gap-1 mb-1 text-center">
+          {pillars.map(({ pillar }) => {
+            const tg = calculateTenGod(chart.dayMaster, pillar.stem);
+            return (
+              <div key={`tg-${pillar.stem}`} className={`text-xs ${tenGodColor(tg)}`}>
+                {tg}
+              </div>
+            );
+          })}
+        </div>
+
+        {/* 天干行 */}
+        <div className="grid grid-cols-4 gap-1 mb-1 text-center">
+          {pillars.map(({ pillar }) => (
+            <div key={`stem-${pillar.stem}`} className="py-2">
+              <span className={`text-2xl font-serif-zh font-bold ${ELEMENT_COLORS[STEM_ELEMENT[pillar.stem]]}`}>
+                {pillar.stem}
+              </span>
+            </div>
+          ))}
+        </div>
+
+        {/* 地支行 */}
+        <div className="grid grid-cols-4 gap-1 mb-1 text-center">
+          {pillars.map(({ pillar }) => (
+            <div key={`branch-${pillar.branch}`} className="py-2 border-t border-gray-100">
+              <span className={`text-2xl font-serif-zh font-bold ${ELEMENT_COLORS[BRANCH_ELEMENT[pillar.branch]]}`}>
+                {pillar.branch}
+              </span>
+            </div>
+          ))}
+        </div>
+
+        {/* 地支十神行 */}
+        <div className="grid grid-cols-4 gap-1 mb-2 text-center">
+          {pillars.map(({ pillar }) => {
+            const tg = pillar.tenGod || '';
+            return (
+              <div key={`btg-${pillar.branch}`} className={`text-xs ${tenGodColor(tg)}`}>
+                {tg}
+              </div>
+            );
+          })}
+        </div>
+
+        {/* 藏干 + 藏干十神 */}
+        <div className="grid grid-cols-4 gap-1 text-center border-t border-gray-100 pt-2">
+          {pillars.map(({ pillar }) => (
+            <div key={`hidden-${pillar.stem}`} className="space-y-1">
+              {pillar.hiddenStems.map((h, i) => (
+                <div key={i} className="flex flex-col items-center">
+                  <span className={`text-sm font-serif-zh ${ELEMENT_COLORS[STEM_ELEMENT[h.stem]]}`}>
+                    {h.stem}
+                  </span>
+                  <span className={`text-xs ${tenGodColor(h.tenGod || '')}`}>
+                    {h.tenGod}
+                  </span>
+                </div>
+              ))}
+            </div>
+          ))}
+        </div>
       </div>
-      {/* 地支 + 十神 */}
-      <div className="text-xl font-serif-zh leading-tight mt-1">
-        <span className={branchColor}>{pillar.branch}</span>
-        <span className="text-xs text-gray-400 ml-1">{branchTenGod}</span>
-      </div>
-      {/* 藏干 + 十神 */}
-      <div className="text-xs text-gray-500 mt-2 space-y-0.5">
-        {pillar.hiddenStems.map((h, i) => (
-          <div key={i} className="flex justify-center gap-1">
-            <span>{h.stem}</span>
-            <span className="text-gray-400">{h.tenGod}</span>
-          </div>
+    </div>
+  );
+}
+
+// 大运流年组件
+function DaYunPanel({ chart }: { chart: BaziChart }) {
+  const [selectedYun, setSelectedYun] = useState(0);
+  const daYun = chart.daYun || [];
+  
+  if (daYun.length === 0) return null;
+
+  const currentYun = daYun[selectedYun];
+  const currentYear = new Date().getFullYear();
+  const birthYear = parseInt(chart.id.split('-')[0]);
+  
+  // 生成流年
+  const liuNian = Array.from({ length: 10 }, (_, i) => {
+    const year = birthYear + currentYun.startAge + i;
+    const stemIdx = (year - 4) % 10;
+    const branchIdx = (year - 4) % 12;
+    const stems = ['甲', '乙', '丙', '丁', '戊', '己', '庚', '辛', '壬', '癸'];
+    const branches = ['子', '丑', '寅', '卯', '辰', '巳', '午', '未', '申', '酉', '戌', '亥'];
+    const stem = stems[stemIdx];
+    const branch = branches[branchIdx];
+    return {
+      year,
+      stem: stems[stemIdx] as any,
+      branch: branches[branchIdx] as any,
+      tenGod: calculateTenGod(chart.dayMaster, stems[stemIdx] as any),
+      isCurrent: year === currentYear,
+    };
+  });
+
+  return (
+    <div className="bg-white rounded-xl p-4 shadow-sm space-y-4">
+      <h3 className="text-sm font-medium text-gray-600">大运流年</h3>
+      
+      {/* 大运选择 */}
+      <div className="flex gap-2 overflow-x-auto pb-2">
+        {daYun.map((dy, i) => (
+          <button
+            key={i}
+            onClick={() => setSelectedYun(i)}
+            className={`shrink-0 px-3 py-2 rounded-lg text-sm text-center transition-colors ${
+              selectedYun === i
+                ? 'bg-ink text-white'
+                : 'bg-gray-50 text-gray-600 hover:bg-gray-100'
+            }`}
+          >
+            <div className="font-serif-zh font-bold">{dy.stem}{dy.branch}</div>
+            <div className="text-xs mt-0.5 opacity-80">{dy.ageRange}</div>
+          </button>
         ))}
       </div>
+
+      {/* 当前大运详情 */}
+      {currentYun && (
+        <div className="bg-gray-50 rounded-lg p-3">
+          <div className="flex items-center justify-between">
+            <div>
+              <span className="text-lg font-serif-zh font-bold">{currentYun.stem}{currentYun.branch}</span>
+              <span className="text-sm text-gray-500 ml-2">{currentYun.ageRange}</span>
+            </div>
+            <div className="text-xs text-gray-400">
+              起运年龄: {currentYun.startAge}岁
+            </div>
+          </div>
+          <div className="text-xs text-gray-500 mt-1">
+            十神: {calculateTenGod(chart.dayMaster, currentYun.stem as any)}
+          </div>
+        </div>
+      )}
+
+      {/* 流年 */}
+      <div>
+        <div className="text-xs text-gray-400 mb-2">流年推演</div>
+        <div className="grid grid-cols-5 gap-2">
+          {liuNian.map((ln) => (
+            <div
+              key={ln.year}
+              className={`text-center p-2 rounded-lg text-sm ${
+                ln.isCurrent ? 'bg-cinnabar/10 text-cinnabar' : 'bg-gray-50'
+              }`}
+            >
+              <div className="text-xs text-gray-400">{ln.year}</div>
+              <div className="font-serif-zh font-bold">{ln.stem}{ln.branch}</div>
+              <div className="text-xs text-gray-500">{ln.tenGod}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// 命盘报告组件
+function ReportGenerator({ chart }: { chart: BaziChart }) {
+  const generateReport = () => {
+    const lines: string[] = [];
+    
+    lines.push(`【八字命盘分析报告】`);
+    lines.push(`日主: ${chart.dayMaster}（${STEM_ELEMENT[chart.dayMaster]}）`);
+    lines.push(`格局: ${chart.patterns.join('、')}`);
+    lines.push('');
+    
+    lines.push(`【四柱】`);
+    const pillars = [chart.year, chart.month, chart.day, chart.hour];
+    const labels = ['年柱', '月柱', '日柱', '时柱'];
+    pillars.forEach((p, i) => {
+      const hidden = p.hiddenStems.map(h => `${h.stem}(${h.tenGod})`).join('、');
+      lines.push(`${labels[i]}: ${p.stem} ${p.branch} | 藏干: ${hidden}`);
+    });
+    lines.push('');
+    
+    lines.push(`【五行力量】`);
+    const sortedElements = Object.entries(chart.elementProfile).sort((a, b) => b[1] - a[1]);
+    sortedElements.forEach(([e, v]) => lines.push(`  ${e}: ${v.toFixed(1)}`));
+    lines.push('');
+    
+    lines.push(`【十神分布】`);
+    const sortedTG = Object.entries(chart.tenGodProfile).sort((a, b) => b[1] - a[1]);
+    sortedTG.forEach(([tg, v]) => lines.push(`  ${tg}: ${v.toFixed(1)}`));
+    lines.push('');
+    
+    if (chart.nayin) {
+      lines.push(`【纳音】`);
+      lines.push(`  年: ${chart.nayin.year} | 月: ${chart.nayin.month} | 日: ${chart.nayin.day} | 时: ${chart.nayin.hour}`);
+      lines.push('');
+    }
+    
+    if (chart.relations) {
+      lines.push(`【天干地支关系】`);
+      chart.relations.stem.forEach(r => lines.push(`  ${r}`));
+      chart.relations.branch.forEach(r => lines.push(`  ${r}`));
+      lines.push('');
+    }
+    
+    if (chart.shenSha) {
+      lines.push(`【神煞】`);
+      Object.entries(chart.shenSha).forEach(([name, values]) => {
+        if (values.length > 0) lines.push(`  ${name}: ${values.join('、')}`);
+      });
+      lines.push('');
+    }
+    
+    if (chart.daYun) {
+      lines.push(`【大运】`);
+      chart.daYun.forEach(dy => {
+        lines.push(`  ${dy.stem}${dy.branch} (${dy.ageRange})`);
+      });
+    }
+    
+    return lines.join('\n');
+  };
+
+  const [report, setReport] = useState('');
+  const [copied, setCopied] = useState(false);
+
+  const handleGenerate = () => {
+    setReport(generateReport());
+  };
+
+  const handleCopy = () => {
+    navigator.clipboard.writeText(report);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+
+  return (
+    <div className="bg-white rounded-xl p-4 shadow-sm space-y-3">
+      <div className="flex items-center justify-between">
+        <h3 className="text-sm font-medium text-gray-600">命盘报告</h3>
+        <button
+          onClick={handleGenerate}
+          className="px-3 py-1.5 bg-ink text-white text-sm rounded-lg hover:bg-ink/90 transition-colors"
+        >
+          生成报告
+        </button>
+      </div>
+      
+      {report && (
+        <div className="relative">
+          <pre className="bg-gray-50 rounded-lg p-3 text-xs text-gray-700 whitespace-pre-wrap font-mono leading-relaxed max-h-96 overflow-y-auto">
+            {report}
+          </pre>
+          <button
+            onClick={handleCopy}
+            className="absolute top-2 right-2 px-2 py-1 bg-white/80 text-xs text-gray-600 rounded border border-gray-200 hover:bg-white transition-colors"
+          >
+            {copied ? '已复制' : '复制'}
+          </button>
+        </div>
+      )}
     </div>
   );
 }
@@ -91,14 +355,6 @@ export default function ChartPage() {
         </div>
       )}
 
-      {/* 四柱 */}
-      <div className="grid grid-cols-4 gap-2 mb-6">
-        <PillarCard label="年柱" pillar={chart.year} dayMaster={chart.dayMaster} />
-        <PillarCard label="月柱" pillar={chart.month} dayMaster={chart.dayMaster} />
-        <PillarCard label="日柱" pillar={chart.day} dayMaster={chart.dayMaster} />
-        <PillarCard label="时柱" pillar={chart.hour} dayMaster={chart.dayMaster} />
-      </div>
-
       {/* 日主信息 */}
       <div className="bg-white rounded-xl p-4 shadow-sm">
         <div className="text-center">
@@ -109,6 +365,9 @@ export default function ChartPage() {
           五行属{STEM_ELEMENT[chart.dayMaster]} · {chart.patterns.join(' · ')}
         </div>
       </div>
+
+      {/* 传统排盘 */}
+      <TraditionalChart chart={chart} />
 
       {/* 纳音五行 */}
       {nayin && (
@@ -172,28 +431,8 @@ export default function ChartPage() {
         </div>
       )}
 
-      {/* 大运 */}
-      {daYun && daYun.length > 0 && (
-        <div className="bg-white rounded-xl p-4 shadow-sm">
-          <h3 className="text-sm font-medium text-gray-600 mb-3">大运</h3>
-          <div className="grid grid-cols-4 gap-2 text-center text-sm">
-            {daYun.slice(0, 4).map((dy, i) => (
-              <div key={i} className="bg-gray-50 rounded-lg p-2">
-                <div className="text-xs text-gray-400">{dy.ageRange}</div>
-                <div className="font-medium">{dy.stem}{dy.branch}</div>
-              </div>
-            ))}
-          </div>
-          <div className="grid grid-cols-4 gap-2 text-center text-sm mt-2">
-            {daYun.slice(4, 8).map((dy, i) => (
-              <div key={i} className="bg-gray-50 rounded-lg p-2">
-                <div className="text-xs text-gray-400">{dy.ageRange}</div>
-                <div className="font-medium">{dy.stem}{dy.branch}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      )}
+      {/* 大运流年 */}
+      <DaYunPanel chart={chart} />
 
       {/* 五行力量 */}
       <div className="bg-white rounded-xl p-4 shadow-sm">
@@ -239,6 +478,9 @@ export default function ChartPage() {
             ))}
         </div>
       </div>
+
+      {/* 命盘报告 */}
+      <ReportGenerator chart={chart} />
     </div>
   );
 }
